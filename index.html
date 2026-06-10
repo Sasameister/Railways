@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A királyság vasúthálózata</title>
+    <link rel="icon" type="image/x-icon" href="./media/favicon.png">
+    <link rel="stylesheet" type="text/css" href="styling.css">
+</head>
+
+<body>
+    <main>
+        <h1>
+            <img src="./media/title.svg" alt="railways">
+        </h1>
+        <form>
+
+            <input type="text" id="name" placeholder="Add meg a neved!" required>
+            <div id="menu">
+                <section class="button">
+                    <p>Állítsd be a nehézséget!</p>
+                    <div id="difficulties">
+                        <div id="easy" class="difficulty">
+                            <div class="game-button">5*5</div>
+                            <input type="radio" id="easy_radio" value="5" name="diff" class="diff_radio" checked>
+                            <label for="easy_radio" class="difficulty_label">könnyű</label>
+                        </div>
+                        <div id="hard" class="difficulty">
+                            <div class="game-button">7*7</div>
+                            <input type="radio" id="hard_radio" value="7" name="diff" class="diff_radio">
+                            <label for="hard_radio" class="difficulty_label">nehéz</label>
+                        </div>
+                    </div>
+                </section>
+                <div id="options">
+                    <input type="button" id="man" class="game-button" value="Leírás">
+                    <input type="button" id="start" class="game-button" value="Játék indítása" disabled>
+                </div>
+            </div>
+        </form>
+        <div id="man-wrap">
+            <div id="szoveg">
+                <div id="close">x</div>
+                <h3>A játék rövid leírása</h3>
+                <p>
+                    A játék különböző méretű négyzetrácsos hálón játszódhat, ahol a célunk az, hogy egy összefüggő
+                    körvasútvonalat alkossunk úgy,
+                    hogy minden olyan helyre eljusson a vonat, ahova lehetséges.
+                    <br>A térképen több különböző típusú mező található, melyek a játék kezdetén látszódnak a térképen:</p>
+                <ul>
+                    <li>
+                        <div class="manual-item">
+                            <img src="./media/manual-imgs/man-empty.png" class="manual-img"
+                                alt="image of the empty tile">
+                            <p><span>Üres mező</span><br> Ebben a cellában a vasútvonal a belépési irányon kívül maradék
+                                három irányba tud haladni.</p>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="manual-item">
+                            <img src="./media/manual-imgs/man-bridge.png" class="manual-img"
+                                alt="image of the bridge tile">
+                            <p><span>Híd mező</span><br> Ezen a mezőn a vasútvonalat csak a híd által megadott egyenes
+                                írányban lehet megépíteni.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="manual-item">
+                            <img src="./media/manual-imgs/man-mountain.png" alt="image of the mountain tile">
+                            <p><span>Hegy mező</span><br> Ezeken a mezőkön a sziklák a cellának két szomszédos kijáratát
+                                lezárják, így csak 90°-ban elfordulva lehet továbbhaladni.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="manual-item">
+                            <img src="./media/manual-imgs/man-oasis.png" class="manual-img"
+                                alt="image of the oasis tile">
+                            <p><span>Óázis</span><br> Erre a cellára nem lehet vasutat építeni.
+                        </div>
+                    </li>
+                </ul>
+                <p>Vasútvonalat bal kattintással tudunk letenni, és minden további kattintáskor, pedig forgatunk rajta.
+                    A sín eltávolítását az egér jobb gombjával tudjuk elvégezni.
+                </p>
+                <p>Mivel szeretnénk a vasúthálózat alapanyagán spórolni,
+                    így a vasúthálózat sehol nem keresztezheti önmagát, sehol nem ágazhat el, és nem haladhat át
+                    többször egy cellán!</p>
+            </div>
+        </div>
+    </main>
+    <div id="game">
+        <div id="misc">
+            <h1>
+                <img src="./media/title.svg" alt="railways">
+            </h1>
+            <div id="playerinfo">
+                <h2>Útvonaltervező:</h2>
+                <p id="pname"></p>
+                <h3>Eltelt idő:</h3>
+                <p id="ptime"></p>
+            </div>
+        </div>
+        <div id="tab">
+            <table>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div id="won">
+            <h1>Pálya teljesítve!</h1>
+            <p>Az időd:</p>
+            <p id="pb"></p>
+            <table id="leaderboard">
+                <thead>
+                    <tr>
+                        <th scope="col">Név</th>
+                        <th scope="col">Idő</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderbody">
+
+                </tbody>
+            </table>
+            <div id="nextBtns">
+                <span id="againBtn">
+                    <img src="./media/again.svg" alt="Restart the current level">
+                </span>
+                <span id="anotherBtn">
+                    <img src="./media/forward.svg" alt="Play another level">
+                </span>
+            </div>
+        </div>
+        <div id="saveDiv">
+            <input type="button" id="save" value="💾">
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
