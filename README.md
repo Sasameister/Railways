@@ -1,5 +1,3 @@
-Szabó Máté Benedek
-FVGUM1
 Webprogramozás - számonkérés
 Ezt a megoldást a fent írt hallgató küldte be és készítette a Webprogramozás kurzus számonkéréséhez.
 Kijelentem, hogy ez a megoldás a saját munkám. Nem másoltam vagy használtam harmadik féltől
