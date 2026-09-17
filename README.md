@@ -14,9 +14,9 @@ Each level has their own leaderboard that keeps track of how much time it took t
 
 ![description](media/desc.png)
 
-## Game
+## Main game view
 
 ![game](media/board.png)
 
-## Won state
+## You've won!
 ![won](media/won.png)
